@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h1 class="mb-3">Claims List</h1>
+    <a routerLink="add">Add</a>
+    <table class="table" *ngIf="claimList && claimList.length>0">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Policy  Id</th>
+                <th scope="col">Policy Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let claim of claimList; let i = index">
+                <td hidden>{{claim.i}}</td>
+                <td hidden>{{claim.claimId}}</td>
+                <td>{{claim.userName}}</td>
+                <td>{{claim.policyId}}</td>
+                <td>{{claim.policyName}}</td>
+                <td>{{claim.status}}</td>
+                <td><a [routerLink]="['/Claim','edit',claim.claimId]">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="table" *ngIf="!claimList || claimList.length <= 0">No Employees Found !</p>
+</div>

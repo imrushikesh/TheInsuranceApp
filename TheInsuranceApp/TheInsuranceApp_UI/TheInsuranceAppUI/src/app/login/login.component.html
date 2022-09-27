@@ -1,0 +1,20 @@
+<div class="container my-5">
+    <h3 class="my-3">Login</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <form #form="ngForm" (ngSubmit)="submit()">
+          <div class="mb-3">
+            <label for="UserName" class="form-label">Username</label>
+            <input type="text" class="form-control" id="UserName" aria-describedby="UserName" name="UserName"
+              [(ngModel)]="loginUser.UserName" />
+          </div>
+          <div class="mb-3">
+            <label for="PassWord" class="form-label">Password</label>
+            <input type="password" class="form-control" id="PassWord" aria-describedby="PassWord" name="PassWord"
+              [(ngModel)]="loginUser.PassWord" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>

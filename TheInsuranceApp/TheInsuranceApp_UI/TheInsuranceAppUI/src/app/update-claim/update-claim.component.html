@@ -1,0 +1,40 @@
+<div class="container my-5">
+  <h3 class="my-3">Edit Employee</h3>
+  <div class="col">
+    <div class="col-md-6">
+      <form #form="ngForm" (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label for="PolicyId" class="form-label">Username - {{userName}} </label>
+        </div>
+        <div class="mb-3">
+          <label for="PolicyId" class="form-label">Policy Id</label>
+          <input type="text" class="form-control" id="PolicyId" aria-describedby="PolicyId" name="PolicyId"
+            [(ngModel)]="editEmployee.PolicyId" />
+        </div>
+        <div class="mb-3">
+          <label for="PolicyName" class="form-label">Policy Name</label>
+          <input type="text" class="form-control" id="PolicyName" aria-describedby="PolicyName" name="PolicyName"
+            [(ngModel)]="editEmployee.PolicyName" />
+        </div>
+
+        <div class="mb-3">
+          <label for="PolicyId" class="form-label">Status - {{status}} </label>
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Bill</label><br>
+          <img [src]="image" style="width: 100px;">
+        </div>
+
+        <div class="mb-3">
+          <label for="id" class="form-label">Change The Total Bill</label>
+          <input type="file" class="form-control" id="newImageData" aria-describedby="newImageData" name="newImageData"
+            [(ngModel)]="newImageData" (change)="readUrl($event)">
+        </div>
+
+      </form>
+      <button type="submit" class="btn btn-primary me-5" (click)="submit()">Save</button>
+      <button type="button" ng class="btn btn-danger" (click)="delete(editEmployee.claimId)">Delete</button>
+    </div>
+  </div>
+</div>

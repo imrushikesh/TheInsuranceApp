@@ -1,0 +1,25 @@
+<div class="container my-5">
+  <h3 class="my-3">Add New Employee</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <form #form="ngForm" (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label for="PolicyId" class="form-label">Policy Id</label>
+          <input type="text" class="form-control" id="PolicyId" aria-describedby="PolicyId" name="PolicyId"
+            [(ngModel)]="addEmployee.PolicyId" />
+        </div>
+        <div class="mb-3">
+          <label for="PolicyName" class="form-label">Policy Name</label>
+          <input type="text" class="form-control" id="PolicyName" aria-describedby="PolicyName" name="PolicyName"
+            [(ngModel)]="addEmployee.PolicyName" />
+        </div>
+        <div class="mb-3">
+          <label for="PolicyName" class="form-label">Upload Total Bill</label>
+          <input type="file" class="form-control" id="BillImageData" aria-describedby="BillImageData"
+            name="BillImageData" [(ngModel)]="BillImageData" (change)="readUrl($event)" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
