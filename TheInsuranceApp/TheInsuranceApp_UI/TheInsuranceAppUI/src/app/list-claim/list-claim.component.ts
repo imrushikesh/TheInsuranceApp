@@ -5,16 +5,15 @@ import { ApiServiceService } from '../api-service.service';
 @Component({
   selector: 'app-list-claim',
   templateUrl: './list-claim.component.html',
-  styleUrls: ['./list-claim.component.css']
+  styleUrls: ['./list-claim.component.css'],
 })
 export class ListClaimComponent implements OnInit {
-
-  constructor(private service:ApiServiceService) { }
-claimList:any;
+  constructor(private service: ApiServiceService) {}
+  claimList: any;
   ngOnInit(): void {
     this.service.getAllClaims().subscribe({
       next: (response: any) => {
-        this.claimList=response;
+        this.claimList = response;
         console.log(this.claimList);
       },
       error: (Response) => {
@@ -22,5 +21,4 @@ claimList:any;
       },
     });
   }
-
 }

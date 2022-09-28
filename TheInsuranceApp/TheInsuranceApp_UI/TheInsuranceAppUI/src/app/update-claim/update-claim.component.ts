@@ -94,7 +94,7 @@ export class UpdateClaimComponent implements OnInit {
     this.newClaim = {
       claimId:this.editEmployee.claimId,
       userName: this.editEmployee.UserName,
-      status: 'updated',
+      status: 'Updated',
       billImageData: this.editEmployee.BillImageData,
       policyId:this.editEmployee.PolicyId,
       policyName:this.editEmployee.PolicyName

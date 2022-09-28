@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiServiceService } from '../api-service.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private service: ApiServiceService,
     private router: Router,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private userService:UserService
   ) {}
 
   ngOnInit(): void {}
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
       next: (response: any) => {
         console.log(response[0]);
         if (response[0].role == 'admin') {
-          this.router.navigate(['claims']);
+          this.userService.currentUser(response[0]);
+          this.router.navigate(['admin']);
           console.log('admin login');
         }
         if (response[0].role == 'user') {

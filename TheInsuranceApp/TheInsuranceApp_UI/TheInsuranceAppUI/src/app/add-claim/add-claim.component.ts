@@ -43,7 +43,7 @@ export class AddClaimComponent implements OnInit {
   submit() {
     let newClaim = {
       userName: 'userName From Login',
-      status: 'new',
+      status: 'New',
       billImageData: this.url.toString().split(',').pop(),
       policyId: this.addEmployee.PolicyId,
       policyName: this.addEmployee.PolicyName,

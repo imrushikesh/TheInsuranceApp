@@ -10,6 +10,7 @@ import { AddClaimComponent } from './add-claim/add-claim.component';
 import { ListClaimComponent } from './list-claim/list-claim.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './login/login.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './login/login.component';
     UpdateClaimComponent,
     AddClaimComponent,
     ListClaimComponent,
-    LoginComponent
+    LoginComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,

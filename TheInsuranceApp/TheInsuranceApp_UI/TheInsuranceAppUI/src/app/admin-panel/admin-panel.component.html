@@ -1,0 +1,28 @@
+<div class="container my-5" *ngIf="role && role=='admin'">
+    <h1 class="mb-3">Claims List</h1>
+    <table class="table text-center" *ngIf="claimList && claimList.length>0">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Policy Id</th>
+                <th scope="col">Policy Name</th>
+                <th scope="col">Status</th>
+                <th [colSpan]="2" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let claim of claimList; let i = index">
+                <td hidden>{{claim.i}}</td>
+                <td hidden>{{claim.claimId}}</td>
+                <td>{{claim.userName}}</td>
+                <td>{{claim.policyId}}</td>
+                <td>{{claim.policyName}}</td>
+                <td>{{claim.status}}</td>
+                <td><button class="btn btn-success" (click)="accept(claim)">Approve</button>
+                <td><button class="btn btn-danger" (click)="reject(claim)">Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="table" *ngIf="!claimList || claimList.length <= 0">No Claims Found !</p>
+</div>
